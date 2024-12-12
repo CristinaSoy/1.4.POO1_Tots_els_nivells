@@ -4,9 +4,10 @@ Descripció: aquest projecte conté la resolució dels exercicis del nivell 1 de
 Es treballa amb POO bàcic: classes, subclasses, métodes i funcions.
 
 **Exercicis:**
-Classe Employee definida amb un métode initialize i amb una funció per discriminar si ha de pagar o no impostos en funció del sou. 
-NOTA: com que l'enunciat demanava explícitament el métode initialize, s'ha definit un método amb aquest nom en comptes del métode __construct 
-Superclasse Shape amb métode i dos subclasses Triangle i Rectangle amb les funcions respectives area() per calcular la area de cada forma.
+Exercici 1: classe Employee definida amb un métode initialize i amb una funció per discriminar si ha de pagar o no impostos en funció del sou. 
+NOTA: com que l'enunciat demanava explícitament el métode initialize, s'ha definit un método amb aquest nom en comptes del métode __construct. 
+
+Exercici 2: superclasse Shape amb métode i dos subclasses Triangle i Rectangle amb les funcions respectives area() per calcular la area de cada forma.
 
 **Tecnologies utilitzades:**
 XAMPP, PHP 8.2.12 i HTML5, Visual Studio Code, no requereix llibreries externes.
@@ -16,7 +17,9 @@ Sistema operatiu compatible amb Windows, macOS o Linux, PHP >= 7.4 Cap dependèn
 
 **Execució:**
 1. Clona el repositori al teu PC : https://github.com/CristinaSoy/1.4.POO1_Nivell1.git
-2. Obre i executa el fitxer principal al teu entorn d'execució: sprint1_tema4_nivell1.php
+2. Obre i executa el fitxer principal de cada exercici al teu entorn d'execució: 
+Exercici 1: 141.Ex1-Employe.php
+Exercici 2: 141.Ex2-Shape.php
 
 **Desplegament:** aquest projecte no requereix desplegament a producció, ja que és un conjunt d'exercicis pràctics. 
 
