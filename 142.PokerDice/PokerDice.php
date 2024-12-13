@@ -2,16 +2,22 @@
 declare(strict_types=1);
 
 class PokerDice {
-    private array $faces = ["As","K","Q","J","7","8"];
-    private ?string $ultimaTirada = null;
+    //Propiedades de la clase
+    private const CARAS = ["As","K","Q","J","7","8"];
+    private string $ultimaTirada = "";  
+    private static int $tiradasTotales = 0; //Contador global
   
-    public function throw() : string {
-        $this->ultimaTirada = $this->faces[array_rand($this->faces)];
+    public function lanzar() : void {
+        $this->ultimaTirada = self::CARAS[array_rand(self::CARAS)];
+        self::$tiradasTotales++; //incrementa el contador global
+    }
+
+    public function shapeName() : string {
         return $this->ultimaTirada;
     }
 
-    public function shapeName() : void {
-        echo $this->ultimaTirada;
+    public static function getTotalThrows() : int {
+        return self::$tiradasTotales;
     }
 }     
 

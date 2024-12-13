@@ -5,21 +5,32 @@ echo "<h3>Exercici 1. Dau de poker </h3>";
 
 require_once "PokerDice.php";
 
-$daus=[];
-$num = 5;
-
-function crearDaus(int $num, array $daus) : array {
-    for ($i = 0; $i<$num; $i++) {
-        $daus [$i] = new PokerDice();
+function lanzarDados(array $daus) : void {
+    foreach($daus as $index => $dau) {
+        $dau->lanzar();
     }
-return $daus;
+}
+function mostrarResultados(array $daus) {
+    foreach($daus as $index => $dau) {
+        echo "Dau " . ($index + 1) . ": ".$dau->shapeName(). "<br>";
+    }
 }
 
-foreach(crearDaus($num, $daus) as $index => $dau) {
-    $dau->throw();
-    echo "<br> Dau " . ($index + 1) . ": ";
-    $dau->shapeName();
-    echo "<br>";
+
+function main() : void {
+    // crear 5 daus
+
+    $daus = [];
+    for ($i = 0; $i<5; $i++) {
+        $daus[] = new PokerDice();
+    }
+
+    lanzarDados($daus);
+
+    mostrarResultados($daus);
+
+    echo "Tirades totals : " . PokerDice::getTotalThrows() . "<br>";
 }
+main();
 
 ?>
