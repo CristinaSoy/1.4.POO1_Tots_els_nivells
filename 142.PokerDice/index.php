@@ -6,7 +6,7 @@ echo "<h3>Exercici 1. Dau de poker </h3>";
 require_once "PokerDice.php";
 
 function lanzarDados(array $daus) : void {
-    foreach($daus as $index => $dau) {
+    foreach($daus as $dau) {
         $dau->lanzar();
     }
 }
@@ -16,18 +16,17 @@ function mostrarResultados(array $daus) {
     }
 }
 
-
 function main() : void {
-    // crear 5 daus
-
+    // crear array 5 daus
     $daus = [];
     for ($i = 0; $i<5; $i++) {
         $daus[] = new PokerDice();
     }
-
-    lanzarDados($daus);
+    lanzarDados($daus); 
+    //recorre array y ejecuta lanzar()
 
     mostrarResultados($daus);
+    //recorre array y muestra
 
     echo "Tirades totals : " . PokerDice::getTotalThrows() . "<br>";
 }

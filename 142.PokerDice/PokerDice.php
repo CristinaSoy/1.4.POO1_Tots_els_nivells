@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 class PokerDice {
     //Propiedades de la clase
-    private const CARAS = ["As","K","Q","J","7","8"];
+    private static array $caras = ["As","K","Q","J","7","8"];
     private string $ultimaTirada = "";  
     private static int $tiradasTotales = 0; //Contador global
   
     public function lanzar() : void {
-        $this->ultimaTirada = self::CARAS[array_rand(self::CARAS)];
+        $this->ultimaTirada = self::$caras[array_rand(self::$caras)];
         self::$tiradasTotales++; //incrementa el contador global
     }
 

@@ -7,17 +7,17 @@
 </head>
 <body>
     <h1>Menú de Opciones</h1>
-    <form method="POST" action="">
+    <form action="index.php" method="GET">
         <label for="opcion">Elige una opción:</label>
         <select name="opcion" id="opcion" required>
-            <option value="">--Selecciona--</option>
-            <option value="1">Opción 1</option>
-            <option value="2">Opción 2</option>
-            <option value="3">Salir</option>
+            <option value="11">Añadir Cine</option>
+            <option value="12">Añadir Película</option>
+            <option value="21">Listar películas por cine </option>
+            <option value="22">Listar películas de mayor duracion</option>
+            <option value="23">Peliculas en proyección por director"</option>
+            <option value="0">Salir</option>
         </select>
         <button type="submit">Enviar</button>
     </form>
-
-    <p><?php echo $mensaje; ?></p>
 </body>
 </html>

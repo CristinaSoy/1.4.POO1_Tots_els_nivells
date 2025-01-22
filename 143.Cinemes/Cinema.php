@@ -2,9 +2,9 @@
 
 class Cinema {
     //atributos:
-    protected string $nombre;
-    protected string $poblacion;
-    protected array $listadoPeliculas=[];
+    private string $nombre;
+    private string $poblacion;
+    private array $listadoPeliculas=[];
 
 public function __constuct(string $nombre, string $poblacion) {
     $this->nombre = $nombre;
@@ -13,13 +13,13 @@ public function __constuct(string $nombre, string $poblacion) {
 }
 
 public function getNombre() : string {
-    $this->
+    return $this->nombre;
 }
 
 //resto de getters
 
 public function addPelicula (Pelicula $pelicula) : void {
-    $this->$listadoPeliculas[] = $pelicula;
+    $this->listadoPeliculas[] = $pelicula;
 }
 
 }
