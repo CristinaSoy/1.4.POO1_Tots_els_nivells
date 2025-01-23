@@ -2,27 +2,31 @@
 
 require_once "PockerDice.php";
 
-// instancia 5 veces un dado, ejectuta 5 veces el metodo throw y guarda rtdo junto con shapeName en array de tiradas
-function lanzarCincoDados() : array {
-    $resultados5=[];
-    for ($i=0; $i<5; $i++) {
-        $tirada = new PockerDice();
-        echo $tirada->throw();
-        $resultados5[$i]= $tirada->shapeName();
+function lanzarDados($dados) : void {
+    foreach($dados as $dado) {
+        $dado -> throw();
     }
-    return $resultados5;
 }
 
-function getTotalThrows(array $tiradas) : string {
-    return "Se han tirado " .
-     count($tiradas) . " dados.";
-}
+function mostrarUltimasTiradas($dados) : void {
+    $cara = "";
+    foreach($dados as $index =>$dado) {
+        $cara = $dado->shapename(); 
+        echo "Dado ". $index+1 . ": ". $cara . "<br>";
+    }
+   
+}        
 
-$cincoTiradas= lanzarCincoDados();
-echo "<pre>".print_r($cincoTiradas, true). "</pre>";
-echo getTotalThrows($cincoTiradas);
+// crear un array con 5 dados
+$dados = [];
+for ($i=0; $i<5; $i++) {
+    $dados[] = new PockerDice();
+}
+//recorre el array y lanza dados
+lanzarDados($dados);
+
+mostrarUltimasTiradas($dados);
 
 echo PockerDice::obtieneContador();
-
 
 ?>
